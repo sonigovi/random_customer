@@ -24,12 +24,16 @@ class TestRandomCustomer(unittest.TestCase, random_customer):
         AddressLine1 = self.new_customer['AddressLine1']
         City = self.new_customer['City']
         StateCode = self.new_customer['StateCode']
-        Country = self.new_customer['Country']
         ZipCode = self.new_customer['Zip']
         PersonalEmail = self.new_customer['PersonalEmail']
-        print(FirstName)
-        self.assertIsNotNone(FirstName)
-        self.assertNotEqual(self.new_customer['LastName'], '', 'Last Name is ' + self.new_customer['LastName'])
+        print(self.new_customer)
+        self.assertNotEqual(FirstName, '', 'Could not generate First Name')
+        self.assertNotEqual(LastName, '', 'Could not generate Last Name')
+        self.assertNotEqual(AddressLine1, '', 'Could not generate Address Line 1')
+        self.assertNotEqual(City, '', 'Could not generate City')
+        self.assertNotEqual(StateCode, '', 'Could not generate State Code')
+        self.assertNotEqual(ZipCode, '', 'Could not generate Zip Code')
+        self.assertNotEqual(PersonalEmail, '', 'Could not generate Personal Email')
 
 # def test_command_line_interface():
 #     """Test the CLI."""
